@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela" rel="stylesheet">
+    <title>Hello, world!</title>
+    <style type="text/css">
+        .navcolor{
+          background-color:#fffffa;
+          color:#e9cabe;
+          font-family: 'Varela', sans-serif;
+        }
+        .nav-link{
+          color:#000;
+        }
+       .head{
+              background-color:#fffffa;
+              text-align: center;
+              color:#e9cabe;
+              font-family: 'Varela', sans-serif;
+            }
+
+    </style>
+  </head>
+  <body>
+    <div class="row navcolor pt-5">
+      <div>
+      <nav class="navbar">
+        <h6 class="navbar-brand ml-5 px-5 text-dark" style="font-family: 'Staatliches', cursive;">JACCMULTIVERSE</h6>
+      </nav>
+    </div>
+      <nav class="navbar navbar-expand-sm ml-auto" style="margin-right: 200px;">
+         <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link px-5" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-5" href="#">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  px-5" href="#">Work Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  px-5" href="#">Knowledge & SKills </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  px-5" href="#">Certifications</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+      <div class="row head" >
+        <div class="col mt-5" style="padding-top: 10rem">
+          <a class="typewrite h1" data-period="2000" data-type='[ "No matter how difficult life may seem..", "There is always something you can do and succeed at.", "&#45; Stephen Hawking" ]'>
+          </a>
+        </div>
+        <div class="col">
+          <img src="https://ih1.redbubble.net/image.258179510.3456/ap,550x550,12x16,1,transparent,t.png">
+        </div>
+      </div>
+ 
+<p>--- WIP </p>
+
+
+
+
+    <script type="text/javascript">
+      //made by vipul mirajkar thevipulm.appspot.com
+    var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+            }
+
+            setTimeout(function() {
+            that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i=0; i<elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                  new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+    };
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
